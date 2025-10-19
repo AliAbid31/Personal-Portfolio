@@ -124,8 +124,8 @@ export default function Home() {
         <div className={styles.bio}>
           <p id="bio-text"></p>
           <h2>Contact :</h2>
-          <span>Email : aliabid312006@email.com <br/>
-           Or : oa_abid@esi.dz</span>
+          <span>Email : aliabid312006&#64;email.com <br/>
+           Or : oa_abid&#64;esi.dz</span>
         </div>
       </div>
 
