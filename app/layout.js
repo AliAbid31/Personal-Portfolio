@@ -1,5 +1,12 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the FontAwesome CSS
+// import 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faCog } from '@fortawesome/free-solid-svg-icons';
 import "./globals.css";
+import { Orbitron, Roboto } from 'next/font/google';
+const orbitron = Orbitron({ subsets: ['latin'], weight: ['400', '700'] });
+const roboto = Roboto({ subsets: ['latin'], weight: ['300', '400'] });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,10 +25,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
+    <html lang="en" className={`${orbitron.variable} ${roboto.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
