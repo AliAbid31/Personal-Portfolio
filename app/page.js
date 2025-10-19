@@ -188,7 +188,7 @@ export default function Home() {
               <span style={{ color: 'orange' }}>(ESI Algiers)</span>
             </h3>
             <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
-              <li>Organising Events (Algier's Up, S2EE..).</li>
+              <li>Organising Events (Algier&#39;s Up, S2EE..).</li>
               <li>Participating in Hackatons.</li>
               <li>Web Dev Internship with Hexsoftwares.</li>
             </ul>
