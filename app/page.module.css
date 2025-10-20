@@ -95,6 +95,116 @@ body {
     display: flex; 
 }
 
+@media (max-width: 1000px) {
+  .container {
+    position: static !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    padding-bottom: 0;
+    box-sizing: border-box;
+  }
+
+  .div1,
+  .div2,
+  .div3 {
+    width: 100% !important;
+    min-width: 0; 
+    height: auto !important;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .div1 {
+    flex-direction: column !important;
+    background: linear-gradient(to bottom right, rgb(194, 107, 37), #dbd713);
+  }
+
+  .div1 > div {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .name {
+    width: 100% !important;
+    padding: 1.2rem 1rem;
+    min-height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .name img,
+  .name img {
+    width: 36vw !important;
+    height: 36vw !important;
+    max-width: 160px;
+    max-height: 160px;
+    border-width: 6px;
+    margin-bottom: 12px;
+  }
+
+  .name p {
+    white-space: normal;
+    overflow: visible;
+    width: auto;
+    text-align: center;
+    font-size: 1.05rem;
+    border-right: none;
+    animation: none;
+  }
+
+  .bio {
+    width: 100% !important;
+    padding: 0.9rem 1rem;
+    min-height: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .bio p,
+  .bio span,
+  #bio-text {
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+
+  .bio h2 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .fadeIn {
+    width: 92% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 1.5rem;
+    height: auto !important;
+    padding: 1rem !important;
+  }
+
+  .square,
+  .smallSquare {
+    width: 92% !important;
+    margin: 1rem auto;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  html, body {
+    overflow-x: hidden !important;
+  }
+}
+
 /* ==================== DIV1 - RESPONSIVE ==================== */
 .div1 {
     width: 100vw; 
