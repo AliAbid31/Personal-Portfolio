@@ -108,6 +108,7 @@ export default function Home() {
             <a href="#about-me">About Me</a>
             <a href="#skills">Skills</a>
             <a href="#experience">Experience</a>
+            <a href="#additional-info">Additional Info</a>
         </nav>
     </header>
       <section className={styles.container}>
@@ -179,37 +180,82 @@ export default function Home() {
       </div>
       <div className={styles.div3} id="experience">
         <section id="experience" className={styles.fadeIn} style={{overflowY: 'hidden'}}>
-          <h2 style={{color: 'black'}}>Experience :</h2>
+          <h2 style={{color: 'black', marginBottom: '2rem'}}>Experience :</h2>
           <div className={styles.etic}>
             <h3>
               <span style={{ color: '#03e9f4' }}>   Etic Communication </span>
               <span style={{ color: '#E44D26' }}>and Multimedia </span>
               <span style={{ color: '#F7DF1E' }}>member</span>
-              <span style={{ color: 'orange' }}>(ESI Algiers)</span>
+              <span style={{ color: 'orange' }}>(ESI Algiers) :</span>
             </h3>
             <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
               <li>Organising Events (Algier&#39;s Up, S2EE..).</li>
-              <li>Participating in Hackatons.</li>
-              <li>Web Dev Internship with Hexsoftwares.</li>
+              <li>Participating in Hacktic.</li>
             </ul>
           </div>
+          <div className={styles.hexsoftwares}>
+            <h3>
+              <span style={{ color: '#000000', marginLeft: '5%', }}>   Hexsoftwares : </span>
+            </h3>
+            <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
+              <li>Web Dev Summer Internship</li>
+            </ul>
+          </div>
+          <div className={styles.shellmates}>
+            <h3>
+              <span style={{ color: '#000000', marginLeft: '5%', }}>   Shellmates </span>
+              <span style={{ color: '#2D8A4E', }}>Club member : </span>
+            </h3>
+            <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
+              <li>Cyber Security BootCamp</li>
+            </ul>
+          </div>
+          <div className={styles.gdg}>
+            <h3>
+              <span style={{ color: '#F01E0C', marginLeft: '5%', }}>   GDG </span>
+              <span style={{ color: '#0CECF0', }}>Algiers </span>
+              <span style={{ color: '#2D8A4E', }}>Club </span>
+              <span style={{ color: '#F0EC0C', }}>member :</span>
+            </h3>
+            <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
+              <li>GDG Hack Participation</li>
+            </ul>
+          </div>
+          <div className={styles.school}>
+            <h3>
+              <span style={{ color: '#184A8F', marginLeft: '5%', }}>   School of AI </span>
+              <span style={{ color: '#FFFFFF', }}>Algiers member : </span>
+            </h3>
+            <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
+              <li>AI Camp</li>
+            </ul>
+          </div>
+        </section>
+        <section className={styles.square}>
           <div className={styles.projects}>
-            <h2 style={{marginBottom: '0.2rem', color: 'black'}}>Projects :</h2>
-            <div style={{ marginBottom: '0.2rem' }}>
-              <h5 style={{ marginBottom: '-0.2rem' }} className={styles.futbol}>My Football Game :</h5>
-                <a style={{ paddingLeft: '2vw', fontSize: '0.6rem' }} className={styles.a} href="https://ali-abid-football-challenges.vercel.app" target="_blank">ali-abid-football-challenges</a>
+            <h1 style={{marginBottom: '2rem', color: 'black'}}>Projects :</h1>
+            <div style={{ marginBottom: '1rem' }}>
+              <h4 style={{ marginBottom: '0.2rem' }} className={styles.futbol}>My Football Game :</h4>
+                <a style={{ paddingLeft: '2vw', fontSize: '1rem' }} className={styles.a} href="https://ali-abid-football-challenges.vercel.app" target="_blank">ali-abid-football-challenges</a>
             </div>
-            <div style={{ marginBottom: '0.2rem' }}>
-              <h5 style={{ marginBottom: '-0.2rem' }} className={styles.ml}>My First ML model :</h5>
-                <a style={{ paddingLeft: '2vw', fontSize: '0.6rem' }} className={styles.a} href="https://cars-price-predictor.vercel.app" target="_blank">cars-price-predictor</a>
+            <div style={{ marginBottom: '1rem' }}>
+              <h4 style={{ marginBottom: '0.2rem' }} className={styles.ml}>My First ML model :</h4>
+                <a style={{ paddingLeft: '2vw', fontSize: '1rem' }} className={styles.a} href="https://cars-price-predictor.vercel.app" target="_blank">cars-price-predictor</a>
             </div>
-            <div style={{ marginBottom: '0.2rem' }}>
-              <h5 style={{ marginBottom: '-0.2rem' }} className={styles.city}>Smart City Waste Management :</h5>
-                <a style={{ paddingLeft: '2vw', fontSize: '0.6rem' }} className={styles.a} href="https://eco-tracker-blush.vercel.app" target="_blank">eco-tracker-blush</a>
+            <div style={{ marginBottom: '1rem' }}>
+              <h4 style={{ marginBottom: '0.2rem', textUnderlineOffset: '2px' }} className={styles.city}>Smart City Waste  Management :</h4>
+                <a style={{ paddingLeft: '2vw', fontSize: '1rem' }} className={styles.a} href="https://eco-tracker-blush.vercel.app" target="_blank">eco-tracker-blush</a>
+            </div>
+            <div style={{ marginBottom: '1rem' }}>
+              <h4 style={{ marginBottom: '0.2rem', textUnderlineOffset: '2px' }} className={styles.garbage}>Garbage Classifier :</h4>
+                <a style={{ paddingLeft: '2vw', fontSize: '1rem' }} className={styles.a} href="https://eco-garbage-classifier.netlify.app/" target="_blank">eco-garbage-classifier</a>
             </div>
           </div>
+        </section>
+      </div>
+      <div className={styles.div4} id="additional-info">
           <div className={styles.additionalInfo}>
-            <h2 style={{color: 'black'}}>Additional Information :</h2>
+            <h2 style={{color: 'black', marginBottom: '1.2rem'}}>Additional Information :</h2>
             <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
               <li><FontAwesomeIcon style={{color: 'white'}} icon={faGlobe} /> Languages: Arabic, French, English.</li>
               <li><FontAwesomeIcon style={{color: 'blue'}} icon={faLinkedin} /> Linkedin : <a href="https://www.linkedin.com/in/ali-abid-344701335/" target="_blank" rel="noopener noreferrer">linkedin.com/Ali Abid</a></li>
@@ -217,15 +263,12 @@ export default function Home() {
               <li><FontAwesomeIcon style={{color: 'green'}} icon={faPhone} /> Phone Number : +213 553 67 52 04</li>
             </ul>
           </div>
-        </section>
-        <section className={styles.square} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-          <div className={styles.smallSquare} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '70%', backgroundColor: 'rgb(175, 72, 111)', width: '70%' }}>
+          <div className={styles.smallSquare} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '70%', backgroundColor: 'rgb(175, 72, 111)', width: '40%', marginLeft: '5%', borderRadius: '10px' }}>
             <Image src="/guy.png" alt="Profile of Ali Abid" width={200} height={200} style={{ width: '20vw', height: '20vw' }} />
             <p>Full Name : Ali Abid</p>
             <p>Age : 19 years old</p>
             <p>Nationality : Algerian</p>
           </div>
-        </section>
       </div>
       </section> 
       <div className={styles.progressBar}></div>
