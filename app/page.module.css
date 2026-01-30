@@ -89,7 +89,7 @@ body {
 .container {
     position: absolute;
     top: 15vh;
-    width: 300vw;
+    width: 400vw;
     height: 85vh; 
     overflow-x: scroll;
     display: flex; 
@@ -149,7 +149,8 @@ body {
 
   .div1,
   .div2,
-  .div3 {
+  .div3
+  .div4 {
     width: 100% !important;
     min-width: 0; 
     height: auto !important;
@@ -511,7 +512,6 @@ body {
     }
 }
 
-/* ==================== FIN DIV1 ==================== */
 
 @keyframes change-color {
     0% { border-color: blue; }
@@ -662,10 +662,58 @@ body {
 }
 
 .etic {
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem;
 }
 
 .etic ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+    margin-left: 2vw;
+}
+
+.hexsoftwares {
+    margin-bottom: 0.2rem;
+    margin-top: 0.5rem;
+}
+
+.hexsoftwares ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+    margin-left: 2vw;
+}
+
+.shellmates {
+    margin-bottom: 0.2rem;
+    margin-top: 0.5rem;
+}
+
+.shellmates ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+    margin-left: 2vw;
+}
+
+.gdg {
+    margin-bottom: 0.2rem;
+    margin-top: 0.5rem;
+}
+
+.gdg ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+    margin-left: 2vw;
+}
+
+.school {
+    margin-bottom: 0.2rem;
+    margin-top: 0.5rem;
+}
+
+.school ul li {
     font-size: 1rem;
     color: #555;
     margin-bottom: 0.3rem;
@@ -686,7 +734,7 @@ body {
 
 .a {
     color: #333;
-    opacity: 0.7;
+    opacity: 0.7;  
 }
 
 .etic h3 {
@@ -703,10 +751,18 @@ body {
     margin-bottom: 1rem;
 }
 
+.additionalInfo{
+    background-color: rgb(162, 205, 190);
+    height: 70%;
+    width: 40%;
+    border-radius: 10px;
+    padding: 2%;
+}
+
 .additionalInfo ul li {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #555;
-    margin-bottom: 0.3rem;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -749,10 +805,18 @@ body {
 }
 
 .square {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 2rem;
+    margin-left: 3rem;
+    margin-top: 5vh;
+    width: 40%;
+    background: linear-gradient(to bottom left, rgb(37, 63, 194), #e055ea);
+    margin-bottom: 4vh;
+    padding: 2rem;
+    box-sizing: border-box;
+    height: calc(100% - 9vh);
+    overflow-y: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .smallSquare {
@@ -779,4 +843,13 @@ body {
   width: 0%;
   z-index: 1000;
   transition: width 0.1s ease-out;
+}
+
+.div4 {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    align-items: center;
+    flex-direction: row; 
+    background: radial-gradient(circle, #d39f9f, #f0f4f9); 
 }
