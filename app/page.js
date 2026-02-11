@@ -114,7 +114,7 @@ export default function Home() {
       <section className={styles.container}>
         <div className={styles.div1} id="about-me">
         <div className={styles.name}>
-          <Image src="/image.png" alt="Profile Picture" width={100} height={100} /> 
+          <Image src="/image.jpg" alt="Profile Picture" width={100} height={100} /> 
           <p>
             Ali Abid
             <br />
