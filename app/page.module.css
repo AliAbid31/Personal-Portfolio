@@ -180,7 +180,8 @@ body {
 
   .div1 {
     flex-direction: column !important;
-    background: linear-gradient(to bottom right, rgb(194, 107, 37), #dbd713);
+    /* background: linear-gradient(to bottom right, rgb(194, 107, 37), #dbd713); */
+    background:  linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   }
 
   .div1 > div {
