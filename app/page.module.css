@@ -180,7 +180,6 @@ body {
 
   .div1 {
     flex-direction: column !important;
-    /* background: linear-gradient(to bottom right, rgb(194, 107, 37), #dbd713); */
     background:  linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   }
 
@@ -273,13 +272,12 @@ body {
   .container { margin-top: 6rem !important; }
 }
 
-/* ==================== DIV1 - RESPONSIVE ==================== */
 .div1 {
     width: 100vw; 
     height: 100%;
     display: flex;
     flex-direction: row;
-    background: linear-gradient(to bottom right, rgb(194, 107, 37), #dbd713);
+    background: linear-gradient(to bottom right, rgb(193, 163, 139), #dbd713);
 }
 
 .div1 > div {
@@ -814,7 +812,7 @@ body {
     margin-left: 3rem;
     margin-top: 5vh;
     width: 47%;
-    background: linear-gradient(to bottom right, rgb(37, 194, 176), #7355ea);
+    background: linear-gradient(to bottom right, rgb(37, 194, 176), #72aad0);
     margin-bottom: 4vh;
     padding: 2rem;
     box-sizing: border-box;
@@ -829,7 +827,7 @@ body {
     margin-left: 3rem;
     margin-top: 5vh;
     width: 40%;
-    background: linear-gradient(to bottom left, rgb(37, 63, 194), #e055ea);
+    background: linear-gradient(to bottom left, rgb(211, 147, 198), #ec98f3);
     margin-bottom: 4vh;
     padding: 2rem;
     box-sizing: border-box;
