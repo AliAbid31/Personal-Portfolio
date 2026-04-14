@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faPhone, faGamepad } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import 'flag-icon-css/css/flag-icons.min.css';
 
@@ -17,9 +17,9 @@ export default function Home() {
 
         let i = 0;
         if (paragraphElement) {
-            paragraphElement.style.borderRight = '2px solid black'; 
+            paragraphElement.style.borderRight = '2px solid #3b82f6'; 
             const cursorInterval = setInterval(() => {
-                paragraphElement.style.borderRightColor = (paragraphElement.style.borderRightColor === 'black') ? 'transparent' : 'black';
+                paragraphElement.style.borderRightColor = (paragraphElement.style.borderRightColor === 'rgb(59, 130, 246)') ? 'transparent' : '#3b82f6';
             }, 500);
 
             function typeWriter() {
@@ -179,14 +179,14 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.div3} id="experience">
-        <section id="experience" className={styles.fadeIn} style={{overflowY: 'hidden'}}>
-          <h2 style={{color: 'black', marginBottom: '2rem'}}>Experience :</h2>
+        <section id="experience" className={styles.fadeIn}>
+          <h2 style={{color: '#ffffff', marginBottom: '2rem', fontFamily: "'Inter', sans-serif"}}>Experience :</h2>
           <div className={styles.etic}>
             <h3>
-              <span style={{ color: '#03e9f4' }}>   Etic Communication </span>
-              <span style={{ color: '#E44D26' }}>and Multimedia </span>
-              <span style={{ color: '#F7DF1E' }}>member</span>
-              <span style={{ color: 'orange' }}>(ESI Algiers) :</span>
+              <span style={{ color: '#06b6d4' }}>   Etic Communication </span>
+              <span style={{ color: '#ef4444' }}>and Multimedia </span>
+              <span style={{ color: '#f0f0f5' }}>member</span>
+              <span style={{ color: '#8b5cf6' }}>(ESI Algiers) :</span>
             </h3>
             <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
               <li>Organising Events (Algier&#39;s Up, S2EE..).</li>
@@ -195,7 +195,7 @@ export default function Home() {
           </div>
           <div className={styles.hexsoftwares}>
             <h3>
-              <span style={{ color: '#000000', marginLeft: '5%', }}>   Hexsoftwares : </span>
+              <span style={{ color: '#ffffff', marginLeft: '5%' }}>   Hexsoftwares : </span>
             </h3>
             <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
               <li>Web Dev Summer Internship</li>
@@ -203,8 +203,8 @@ export default function Home() {
           </div>
           <div className={styles.shellmates}>
             <h3>
-              <span style={{ color: '#000000', marginLeft: '5%', }}>   Shellmates </span>
-              <span style={{ color: '#2D8A4E', }}>Club member : </span>
+              <span style={{ color: '#ffffff', marginLeft: '5%' }}>   Shellmates </span>
+              <span style={{ color: '#10b981' }}>Club member : </span>
             </h3>
             <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
               <li>Cyber Security BootCamp</li>
@@ -212,28 +212,39 @@ export default function Home() {
           </div>
           <div className={styles.gdg}>
             <h3>
-              <span style={{ color: '#F01E0C', marginLeft: '5%', }}>   GDG </span>
-              <span style={{ color: '#0CECF0', }}>Algiers </span>
-              <span style={{ color: '#2D8A4E', }}>Club </span>
-              <span style={{ color: '#F0EC0C', }}>member :</span>
+              <span style={{ color: '#ef4444', marginLeft: '5%' }}>   GDG </span>
+              <span style={{ color: '#06b6d4' }}>Algiers </span>
+              <span style={{ color: '#10b981' }}>Club </span>
+              <span style={{ color: '#f0f0f5' }}>member — 6 mos :</span>
             </h3>
             <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
-              <li>GDG Hack Participation</li>
+              <li>Member — Nov 2025 - Present · Hybrid</li>
+              <li>GDG Hack 3.0 Participation — Dec 2025 · Hackathon organised by GDG Algiers</li>
+              <li>GDG Integration Program 2025 — Nov 2025</li>
             </ul>
           </div>
           <div className={styles.school}>
             <h3>
-              <span style={{ color: '#184A8F', marginLeft: '5%', }}>   School of AI </span>
-              <span style={{ color: '#FFFFFF', }}>Algiers member : </span>
+              <span style={{ color: '#3b82f6', marginLeft: '5%' }}>   School of AI </span>
+              <span style={{ color: '#f0f0f5' }}>Algiers member — 7 mos :</span>
             </h3>
             <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
-              <li>AI Camp</li>
+              <li>Member — Oct 2025 - Present</li>
+              <li>AI Real Camp — Feb 2026 - Present · 3 mos<br/>
+                <span style={{ fontSize: '0.82rem', color: '#a5b4d4', display: 'block', marginTop: '0.2rem' }}>
+                  As a beginner-friendly datathon by the School of AI Algiers, AI Real Camp was my first step into the world of datathons. It allowed me to discover how AI challenges really work
+                </span>
+                <span style={{ fontSize: '0.82rem', color: '#a5b4d4', display: 'block', marginTop: '0.2rem', fontWeight: 600 }}>
+                  <FontAwesomeIcon icon={faGamepad} style={{ marginRight: '0.3rem' }} /> Kaggle Competing
+                </span>
+              </li>
+              <li>AI Camp — Dec 2025 · Computer Vision and Artificial Neural Networks</li>
             </ul>
           </div>
         </section>
         <section className={styles.square}>
           <div className={styles.projects}>
-            <h1 style={{marginBottom: '2rem', color: 'black'}}>Projects :</h1>
+            <h1 style={{marginBottom: '2rem', color: '#ffffff', fontFamily: "'Inter', sans-serif", fontSize: '1.5rem', fontWeight: 700}}>Projects :</h1>
             <div style={{ marginBottom: '1rem' }}>
               <h4 style={{ marginBottom: '0.2rem' }} className={styles.futbol}>My Football Game :</h4>
                 <a style={{ paddingLeft: '2vw', fontSize: '1rem' }} className={styles.a} href="https://ali-abid-football-challenges.vercel.app" target="_blank">ali-abid-football-challenges</a>
@@ -250,20 +261,24 @@ export default function Home() {
               <h4 style={{ marginBottom: '0.2rem', textUnderlineOffset: '2px' }} className={styles.garbage}>Garbage Classifier :</h4>
                 <a style={{ paddingLeft: '2vw', fontSize: '1rem' }} className={styles.a} href="https://eco-garbage-classifier.netlify.app/" target="_blank">eco-garbage-classifier</a>
             </div>
+            <div style={{ marginBottom: '1rem' }}>
+              <h4 style={{ marginBottom: '0.2rem' }} className={styles.worldcup}>World Cup Predictions :</h4>
+                <a style={{ paddingLeft: '2vw', fontSize: '1rem' }} className={styles.a} href="https://world-cup-2026-predictions.netlify.app/" target="_blank">world-cup-2026-predictions</a>
+            </div>
           </div>
         </section>
       </div>
       <div className={styles.div4} id="additional-info">
           <div className={styles.additionalInfo}>
-            <h2 style={{color: 'black', marginBottom: '1.2rem'}}>Additional Information :</h2>
+            <h2 style={{color: '#ffffff', marginBottom: '1.2rem', fontFamily: "'Inter', sans-serif"}}>Additional Information :</h2>
             <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
-              <li><FontAwesomeIcon style={{color: 'white'}} icon={faGlobe} /> Languages: Arabic, French, English.</li>
-              <li><FontAwesomeIcon style={{color: 'blue'}} icon={faLinkedin} /> Linkedin : <a href="https://www.linkedin.com/in/ali-abid-344701335/" target="_blank" rel="noopener noreferrer">linkedin.com/Ali Abid</a></li>
-              <li><FontAwesomeIcon style={{color: 'black'}} icon={faGithub} /> GitHub : <a href="https://github.com/AliAbid31" target="_blank" rel="noopener noreferrer">github.com/AliAbid31</a></li>
-              <li><FontAwesomeIcon style={{color: 'green'}} icon={faPhone} /> Phone Number : +213 553 67 52 04</li>
+              <li><FontAwesomeIcon style={{color: '#9ca3af'}} icon={faGlobe} /> Languages: Arabic, French, English.</li>
+              <li><FontAwesomeIcon style={{color: '#3b82f6'}} icon={faLinkedin} /> Linkedin : <a href="https://www.linkedin.com/in/ali-abid-344701335/" target="_blank" rel="noopener noreferrer">linkedin.com/Ali Abid</a></li>
+              <li><FontAwesomeIcon style={{color: '#f0f0f5'}} icon={faGithub} /> GitHub : <a href="https://github.com/AliAbid31" target="_blank" rel="noopener noreferrer">github.com/AliAbid31</a></li>
+              <li><FontAwesomeIcon style={{color: '#10b981'}} icon={faPhone} /> Phone Number : +213 553 67 52 04</li>
             </ul>
           </div>
-          <div className={styles.smallSquare} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '70%', backgroundColor: 'rgb(175, 72, 111)', width: '40%', marginLeft: '5%', borderRadius: '10px' }}>
+          <div className={styles.smallSquare}>
             <Image src="/guy.png" alt="Profile of Ali Abid" width={200} height={200} style={{ width: '20vw', height: '20vw' }} />
             <p>Full Name : Ali Abid</p>
             <p>Age : 19 years old</p>
