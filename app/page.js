@@ -3,92 +3,16 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe, faPhone, faGamepad } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGlobe, faPhone, faGamepad, faUpRightFromSquare, faBolt, faDatabase, faLeaf, faCode, faRocket, faPaperPlane, faFire, faSmile, faChartSimple, faInfinity, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub, faJava, faGitAlt, faKaggle, faReact, faJs, faFigma, faPython } from '@fortawesome/free-brands-svg-icons';
 import 'flag-icon-css/css/flag-icons.min.css';
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false);
-    useEffect(() => {
-        const textToType = `As a dynamic and motivated Computer Science student at the prestigious École Nationale Supérieure d'Informatique (ESI) in Algiers, my fascination with logical problem-solving and creative design has naturally guided me toward web development. I possess a robust and ever-growing skill set in a range of web technologies, from mastering front-end languages like HTML, CSS, and JavaScript to exploring modern frameworks and back-end systems.\n\nWhat drives me daily is understanding how a simple idea can be transformed into a functional, intuitive, and elegant application. I don't just write code; I aspire to build seamless user experiences and resilient, scalable architectures. My ambition extends beyond technical mastery; I aim to develop a holistic product vision to contribute meaningfully to forward-thinking projects. For me, every line of code is an opportunity to learn, grow, and help build the web of tomorrow.`;
-            
-        const paragraphElement = document.getElementById('bio-text');
-        const typingSpeed = 20;
-
-        let i = 0;
-        if (paragraphElement) {
-            paragraphElement.style.borderRight = '2px solid #3b82f6'; 
-            const cursorInterval = setInterval(() => {
-                paragraphElement.style.borderRightColor = (paragraphElement.style.borderRightColor === 'rgb(59, 130, 246)') ? 'transparent' : '#3b82f6';
-            }, 500);
-
-            function typeWriter() {
-                if (i < textToType.length) {
-                    let char = textToType.charAt(i);
-                    paragraphElement.innerHTML += (char === '\n') ? '<br>' : char;
-                    i++;
-                    setTimeout(typeWriter, typingSpeed);
-                } else {
-                    clearInterval(cursorInterval); 
-                    paragraphElement.style.borderRightColor = 'transparent'; 
-                }
-            }
-            typeWriter();
-        }
-
-        const scrollContainer = document.querySelector(`.${styles.container}`);
-        const progressBar = document.querySelector(`.${styles.progressBar}`);
-
-        if (scrollContainer && progressBar) {
-            const handleScroll = () => {
-                const scrollLeft = scrollContainer.scrollLeft;
-                const scrollWidth = scrollContainer.scrollWidth;
-                const clientWidth = scrollContainer.clientWidth;
-
-                if (scrollWidth <= clientWidth) {
-                    progressBar.style.width = '0%';
-                    return;
-                }
-
-                const scrollPercent = (scrollLeft / (scrollWidth - clientWidth)) * 100;
-                progressBar.style.width = scrollPercent + '%';
-            };
-            scrollContainer.addEventListener('scroll', handleScroll);
-
-            return () => {
-                scrollContainer.removeEventListener('scroll', handleScroll);
-            };
-        }
-    }, []);
-
-    useEffect(() => {
-        const skillCards = document.querySelectorAll(`.${styles.skillCard}`);
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add(styles.visible);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1 
-        });
-
-        skillCards.forEach(card => {
-            observer.observe(card);
-        });
-
-        return () => {
-            skillCards.forEach(card => {
-                observer.unobserve(card);
-            });
-        };
-    }, []);
+    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 0) {
+            if (window.scrollY > 50) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
@@ -97,196 +21,308 @@ export default function Home() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-  return (
-    <>
-      <header className={styles.mainHeader}>
-        <div className={styles.logoContainer}>
-            <h1>My Portfolio</h1>
-            <p>Welcome to my professional journey.</p>
-        </div>
-        <nav className={styles.sections}>
-            <a href="#about-me">About Me</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#additional-info">Additional Info</a>
-        </nav>
-    </header>
-      <section className={styles.container}>
-        <div className={styles.div1} id="about-me">
-        <div className={styles.name}>
-          <Image src="/image.jpg" alt="Profile Picture" width={100} height={100} /> 
-          <p>
-            Ali Abid
-            <br />
-            <br />
-            <span>CS Student at ESI Algiers and Web-Developer</span>
-          </p>
-        </div>
-        <div className={styles.bio}>
-          <p id="bio-text"></p>
-          <h2>Contact :</h2>
-          <span>Email : aliabid312006&#64;email.com <br/>
-           Or : oa_abid&#64;esi.dz</span>
-        </div>
-      </div>
 
-      <div className={styles.div2} id="skills">
-        <div className={styles.skillsContent}>
-          <h2 style={{ fontFamily: "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" }}>My Principle Software Skills</h2>
-          <div className={styles.skillsGrid}>
-                <div className={`${styles.skillCard} ${styles.html}`}>
-                    <svg viewBox="0 0 128 128" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m14 113.8 9.5-107.6h81L95 113.7 64.3 121.1z" fill="#e44d26"/><path d="m64.3 115.3 25.3-7.2 8.8-99h-34.1z" fill="#f16529"/><path d="m36.7 50.8h27.6v12.9h-19.1l1.4 15.5h17.7v12.9H40.2zm28.4-12.9h13.2l-1.2 12.9h-12zm-12 30.6h11.2l.9 11.2 13.5 3.6v13.6l-24.8-6.7z" fill="#ebebeb"/><path d="m65.1 63.7-1.2-12.9h12l-1.2 12.9zm-.8 14.7h11.2l.9 11.2 13.5 3.6v13.6l-24.8-6.7z" fill="#fff"/></svg>
-                    <h3>HTML5</h3>
+    // Observer for fade-in animations on scroll
+    useEffect(() => {
+        const elementsToAnimate = document.querySelectorAll(`.${styles.animateOnScroll}`);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(styles.visible);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        elementsToAnimate.forEach(el => observer.observe(el));
+        return () => elementsToAnimate.forEach(el => observer.unobserve(el));
+    }, []);
+
+    return (
+        <div className={styles.mainWrapper}>
+            <header className={`${styles.mainHeader} ${scrolled ? styles.scrolled : ''}`}>
+                <div className={styles.logoContainer}>
+                    <h1>My Portfolio</h1>
+                    <p>Welcome to my professional journey.</p>
                 </div>
-                <div className={`${styles.skillCard} ${styles.Css}`}>
-                    <svg viewBox="0 0 128 128" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m14 113.8 9.5-107.6h81L95 113.7 64.3 121.1z" fill="#1572b6"/><path d="m64.3 115.3 25.3-7.2 8.8-99h-34.1z" fill="#33a9dc"/><path d="m49.3 63.7 1.2-12.9h27.6v12.9H54.4zm27.6-12.9H65.1l-1.2 12.9h20.4zM49.3 79.2l1.4 15.5h12.5v-12.9H52l-.8-9.1zm18.5 2.7h-11.2l1.4 15.5H69l-1.2-13.3z" fill="#ebebeb"/><path d="M65.1 63.7H54.4l-1.2 12.9h11.9zm11.8-12.9H65.1l-1.2 12.9h20.4zm-12.6 28.4h12.3l-1.2-13.3h-12.3zm12.3 0-1.2-13.3-13.5-3.6v-13.6l24.8 6.7z" fill="#fff"/></svg>
-                    <h3>CSS3</h3>
+                <nav className={styles.sections}>
+                    <a href="#about-me">About Me</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#additional-info">Contact</a>
+                </nav>
+            </header>
+
+            <main className={styles.container}>
+                {/* HERO SECTION */}
+                <section className={styles.heroSection}>
+                    <div className={styles.heroGears}></div>
+                    <div className={styles.heroContent}>
+                        <h1 className={styles.heroTitle}>
+                            Hi, I am <span className={styles.highlight}>Ali Abid<span className={styles.cursor}>|</span></span>
+                        </h1>
+                        <p className={styles.heroSubtitle}>
+                            A full-stack developer passionate about building reliable, scalable products.
+                        </p>
+                        <p className={styles.heroDescription}>
+                            Specializing in end-to-end web applications, from intuitive frontends to robust APIs and database architectures that power modern experiences.
+                        </p>
+                    </div>
+                </section>
+
+                {/* ABOUT ME SECTION */}
+                <section className={styles.aboutSection} id="about-me">
+                    <div className={styles.aboutGears}></div>
+                    <div className={styles.aboutContent}>
+                        <div className={`${styles.imageContainer} ${styles.animateOnScroll}`}>
+                            <Image src="/image.jpg" alt="Profile Picture of Ali Abid" width={320} height={320} className={styles.profileImage}/>
+                        </div>
+                        <div className={`${styles.aboutText} ${styles.animateOnScroll}`}>
+                            <h2>About <span className={styles.highlight}>Me</span></h2>
+                            <p>
+                                As a dynamic and motivated Computer Science student at the prestigious École Nationale Supérieure d'Informatique (ESI) in Algiers, my fascination with logical problem-solving and creative design has naturally guided me toward web development. I possess a robust and ever-growing skill set in a range of web technologies, from mastering front-end languages like HTML, CSS, and JavaScript to exploring modern frameworks and back-end systems.
+                            </p>
+                            <p>
+                                What drives me daily is understanding how a simple idea can be transformed into a functional, intuitive, and elegant application. I don't just write code; I aspire to build seamless user experiences and resilient, scalable architectures. My ambition extends beyond technical mastery; I aim to develop a holistic product vision to contribute meaningfully to forward-thinking projects. For me, every line of code is an opportunity to learn, grow, and help build the web of tomorrow.
+                            </p>
+                            <div className={styles.aboutButtons}>
+                                <div className={styles.badge}>CS Student at ESI</div>
+                                <div className={styles.badge}>+5 Projects Completed</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* SKILLS SECTION */}
+                <section className={styles.skillsSection} id="skills">
+                    <div className={styles.skillsContent}>
+                        <h2 className={styles.sectionTitle}>My <span className={styles.highlight}>Skills</span></h2>
+                        <p className={styles.skillsSubtitle} style={{textAlign: 'center', color: '#94a3b8', marginBottom: '3rem', marginTop: '-2rem'}}>A comprehensive toolkit of technologies I use to build complete full-stack solutions</p>
+                        
+                        <div className={styles.categoryContainer}>
+                            <h3 className={styles.categoryTitle}>🌐 Frontend Tools</h3>
+                            <div className={styles.skillsGrid}>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faReact} style={{ color: '#61DAFB', fontSize: '3.5rem' }} />
+                                    <h3>React</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <span style={{fontSize: '3.5rem', fontWeight: 800, color: '#fff', lineHeight: 1 }}>N<span style={{fontSize:'1.5rem'}}>.js</span></span>
+                                    <h3>Next.js</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faJs} style={{ color: '#F7DF1E', fontSize: '3.5rem' }} />
+                                    <h3>JavaScript</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <span style={{fontSize: '2.5rem', fontWeight: 800, color: '#fff', backgroundColor: '#3178C6', padding: '0.2rem 0.6rem', borderRadius: '8px' }}>TS</span>
+                                    <h3>TypeScript</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faFigma} style={{ color: '#a259ff', fontSize: '3.5rem' }} />
+                                    <h3>Figma</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className={styles.categoryContainer}>
+                            <h3 className={styles.categoryTitle}>⚙️ Backend Tools</h3>
+                            <div className={styles.skillsGrid}>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faPython} style={{ color: '#3776ab', fontSize: '3.5rem' }} />
+                                    <h3>Python</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faJava} style={{ color: '#f89820', fontSize: '3.5rem' }} />
+                                    <h3>Java</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <svg viewBox="0 0 24 24" fill="none" style={{width: '3.5rem', height: '3.5rem'}} xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="20" height="20" rx="4" fill="#303030"/>
+                                        <path d="M7 12H17M7 12L10 9M7 12L10 15" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                        <path d="M12 7V17M12 7L9 10M12 7L15 10" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                    <h3>Express.js</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faBolt} style={{ color: '#14b8a6', fontSize: '3.5rem' }} />
+                                    <h3>FastAPI</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faDatabase} style={{ color: '#0ea5e9', fontSize: '3.5rem' }} />
+                                    <h3>SQL</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faLeaf} style={{ color: '#4ade80', fontSize: '3.5rem' }} />
+                                    <h3>MongoDB</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className={styles.categoryContainer}>
+                            <h3 className={styles.categoryTitle}>🚀 DevOps & Tools</h3>
+                            <div className={styles.skillsGrid}>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faGitAlt} style={{ color: '#f97316', fontSize: '3.5rem' }} />
+                                    <h3>Git</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faGithub} style={{ color: '#f1f5f9', fontSize: '3.5rem' }} />
+                                    <h3>GitHub</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faCode} style={{ color: '#3b82f6', fontSize: '3.5rem' }} />
+                                    <h3>VS Code</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faRocket} style={{ color: '#a855f7', fontSize: '3.5rem' }} />
+                                    <h3>Antigravity</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faPaperPlane} style={{ color: '#f97316', fontSize: '3.5rem' }} />
+                                    <h3>Postman</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className={styles.categoryContainer}>
+                            <h3 className={styles.categoryTitle}>🤖 AI & ML Tools</h3>
+                            <div className={styles.skillsGrid}>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faFire} style={{ color: '#ef4444', fontSize: '3.5rem' }} />
+                                    <h3>PyTorch</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faSmile} style={{ color: '#fcd34d', fontSize: '3.5rem' }} />
+                                    <h3>Hugging Face</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faChartSimple} style={{ color: '#38bdf8', fontSize: '3.5rem' }} />
+                                    <h3>Kaggle</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faInfinity} style={{ color: '#f59e0b', fontSize: '3.5rem' }} />
+                                    <h3>Google Colab</h3>
+                                </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faMoon} style={{ color: '#f97316', fontSize: '3.5rem' }} />
+                                    <h3>Jupyter</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <div className={styles.lowerSectionsWrapper}>
+                    {/* EXPERIENCE SECTION */}
+                    <section className={`${styles.experienceSection} ${styles.animateOnScroll}`} id="experience">
+                        <h2 className={styles.sectionTitle}>Experience</h2>
+                        <div className={styles.timeline}>
+                            <div className={styles.timelineItem}>
+                                <h3><span className={styles.highlightPink}>Etic Communication</span> and Multimedia member <span className={styles.highlightPurple}>(ESI Algiers)</span></h3>
+                                <ul>
+                                    <li>Organising Events (Algier's Up, S2EE..).</li>
+                                    <li>Participating in Hacktic.</li>
+                                </ul>
+                            </div>
+                            <div className={styles.timelineItem}>
+                                <h3>Hexsoftwares</h3>
+                                <ul>
+                                    <li>Web Dev Summer Internship</li>
+                                </ul>
+                            </div>
+                            <div className={styles.timelineItem}>
+                                <h3><span className={styles.highlightGreen}>Shellmates</span> Club member</h3>
+                                <ul>
+                                    <li>Cyber Security BootCamp</li>
+                                </ul>
+                            </div>
+                            <div className={styles.timelineItem}>
+                                <h3><span className={styles.highlightRed}>GDG</span> <span className={styles.highlight}>Algiers</span> <span className={styles.highlightGreen}>Club</span> member — 6 mos</h3>
+                                <ul>
+                                    <li>Member — Nov 2025 - Present · Hybrid</li>
+                                    <li>GDG Hack 3.0 Participation — Dec 2025 · Hackathon organised by GDG Algiers</li>
+                                    <li>GDG Integration Program 2025 — Nov 2025</li>
+                                </ul>
+                            </div>
+                            <div className={styles.timelineItem}>
+                                <h3><span className={styles.highlightBlue}>School of AI</span> Algiers member — 7 mos</h3>
+                                <ul>
+                                    <li>Member — Oct 2025 - Present</li>
+                                    <li>AI Real Camp — Feb 2026 - Present · 3 mos
+                                        <span className={styles.timelineSubtext}>As a beginner-friendly datathon by the School of AI Algiers, AI Real Camp was my first step into the world of datathons. It allowed me to discover how AI challenges really work</span>
+                                        <span className={styles.timelineHighlight}><FontAwesomeIcon icon={faGamepad} /> Kaggle Competing</span>
+                                    </li>
+                                    <li>AI Camp — Dec 2025 · Computer Vision and Artificial Neural Networks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* PROJECTS SECTION */}
+                    <section className={`${styles.projectsSection} ${styles.animateOnScroll}`} id="projects">
+                        <h2 className={styles.sectionTitle}>Featured <span className={styles.highlight}>Projects</span></h2>
+                        <div className={styles.projectsGrid}>
+                            <a href="https://ali-abid-football-challenges.vercel.app" target="_blank" className={styles.projectCard}>
+                                <div className={styles.projectContent}>
+                                    <h4 className={styles.highlightBlue}>My Football Game</h4>
+                                    <p>ali-abid-football-challenges <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.iconSmall} /></p>
+                                </div>
+                            </a>
+                            <a href="https://cars-price-predictor.vercel.app" target="_blank" className={styles.projectCard}>
+                                <div className={styles.projectContent}>
+                                    <h4 className={styles.highlightRed}>My First ML model</h4>
+                                    <p>cars-price-predictor <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.iconSmall} /></p>
+                                </div>
+                            </a>
+                            <a href="https://eco-tracker-blush.vercel.app" target="_blank" className={styles.projectCard}>
+                                <div className={styles.projectContent}>
+                                    <h4 className={styles.highlightGreen}>Smart City Waste Management</h4>
+                                    <p>eco-tracker-blush <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.iconSmall} /></p>
+                                </div>
+                            </a>
+                            <a href="https://eco-garbage-classifier.netlify.app/" target="_blank" className={styles.projectCard}>
+                                <div className={styles.projectContent}>
+                                    <h4 className={styles.highlightGreen}>Garbage Classifier</h4>
+                                    <p>eco-garbage-classifier <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.iconSmall} /></p>
+                                </div>
+                            </a>
+                            <a href="https://world-cup-2026-predictions.netlify.app/" target="_blank" className={styles.projectCard}>
+                                <div className={styles.projectContent}>
+                                    <h4 className={styles.highlightOrange}>World Cup Predictions</h4>
+                                    <p>world-cup-2026-predictions <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.iconSmall} /></p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
                 </div>
-                <div className={`${styles.skillCard} ${styles.Js}`}>
-                    <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="256" height="256" fill="#F7DF1E"/>
-                        <path fill="#000" d="M117.8 196.8c-1.8 3.5-3.5 6.9-3.5 6.9s-1.8-1.7-3.5-3.5c-3.5-5.2-12.2-15.6-26.1-15.6-13.9 0-21.7 8.7-21.7 20.9 0 12.2 8.7 17.4 20.9 17.4 8.7 0 15.6-3.5 19.1-10.4 1.7-3.5 3.5-6.9 3.5-6.9h30.4s-3.5 20.9-20.9 20.9c-19.1 0-33-8.7-33-28.7 0-19.1 12.2-34.7 33-34.7 17.4 0 28.7 7 33 13.9zM196.8 196.8c-1.7 3.5-3.5 6.9-3.5 6.9s-1.7-1.7-3.5-3.5c-3.5-5.2-12.2-15.6-26.1-15.6-13.9 0-21.7 8.7-21.7 20.9 0 12.2 8.7 17.4 20.9 17.4 8.7 0 15.6-3.5 19.1-10.4 1.7-3.5 3.5-6.9 3.5-6.9h30.4s-3.5 20.9-20.9 20.9c-19.1 0-33-8.7-33-28.7 0-19.1 12.2-34.7 33-34.7 17.4 0 28.7 7 33 13.9z" transform="translate(-14.5 -38) scale(1.2)" />
-                    </svg>
-                    <h3>JavaScript</h3>
-                </div>
-                <div className={`${styles.skillCard} ${styles.NextJs}`}> 
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.75 3.75L12 18.75L20.25 3.75H3.75ZM12 4.5L7.5 12L12 18.75L16.5 12L12 4.5Z" fill="black"/>
-                    </svg>
-                    <h3>Next.js</h3>
-                </div>
-                <div className={`${styles.skillCard} ${styles.React}`}>
-                    <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 552.2c-12 .3-23.9-4.2-32.9-13.1-9-9-14.2-21.1-13.9-33.2 2.3-79.5 63.8-144 143.6-144s141.3 64.5 143.6 144c.3 12-4.9 24.1-13.9 33.2-9 9-20.9 13.4-32.9 13.1-93.5 2.4-177.2-2.3-270.1 0zm-96-156.4c-1.4 83.2-68.5 149.2-152.2 147.1-83.7-2.1-149.8-69.5-147.7-153.3 2.1-83.7 69.5-149.8 153.3-147.7 83.7 2.1 149.8 69.5 147.7 153.3-.3 1.4-.4 2.8-.4 4.2zm96 312.8c1.4-83.2 68.5-149.2 152.2-147.1 83.7 2.1 149.8 69.5 147.7 153.3-2.1 83.7-69.5 149.8-153.3 147.7-83.7-2.1-149.8-69.5-147.7-153.3.2-1.4.3-2.8.4-4.2zM759.7 240c-66.6-66.7-156-103.3-247.7-103.3S330.9 173.3 264.3 240c-66.7 66.6-103.3 156-103.3 247.7s36.7 181.1 103.3 247.7c66.6 66.7 156 103.3 247.7 103.3s181.1-36.7 247.7-103.3c66.7-66.6 103.3-156 103.3-247.7s-36.7-181.1-103.3-247.7zM805 512c0 161.9-131.1 293-293 293S219 673.9 219 512 350.1 219 512 219s293 131.1 293 293z" fill="#61DAFB"/></svg>
-                    <h3>React</h3>
-                </div>
-                <div className={`${styles.skillCard} ${styles.Express}`}>
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="2" width="20" height="20" rx="4" fill="#303030"/>
-                    <path d="M7 12H17M7 12L10 9M7 12L10 15" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 7V17M12 7L9 10M12 7L15 10" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                <h3>Express.js</h3>
-                </div>
-                <div className={`${styles.skillCard} ${styles.Python}`}>
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.19 13.23a2.33 2.33 0 0 1-2.31-2.32v-2.3a2.33 2.33 0 0 1 2.31-2.31h3.18v-3.2H14.16v3.2h3.18a2.32 2.32 0 0 1 2.31 2.31v2.3a2.32 2.32 0 0 1-2.31 2.32h-3.18v10.36h-3.18V2.78H1.81v3.2h3.18a2.32 2.32 0 0 1 2.31 2.31v6.88H1.81v3.2h12.35v-3.2H7.3a2.33 2.33 0 0 1-2.31-2.32V8.6a2.32 2.32 0 0 1 2.31-2.31h3.18V2.78h3.18v10.45Z" fill="#3776ab"/><path d="M12.35 15.54a2.33 2.33 0 0 1-2.31-2.31h-3.2v3.19h10.36v3.18H1.81v-3.18h3.18a2.32 2.32 0 0 1 2.31-2.31V8.6H1.81v3.19h-3.18v3.18h16.88v-3.18h-3.18ZM10.04 1.81a2.31 2.31 0 0 1 2.31-2.31h6.88v3.18H12.35a2.32 2.32 0 0 1-2.31-2.31V-1.47H6.86v6.2h3.18Z" fill="#ffde57"/></svg>
-                    <h3>Python</h3>
-                </div>
-                <div className={`${styles.skillCard} ${styles.Figma}`}>
-                    <svg viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12Z" fill="#2c2c2c" className="fill-1b1b1b"/><path d="M12 24c3.314 0 6-5.373 6-12S15.314 0 12 0v24Z" fill="#0acf83" className="fill-0acf83"/><path d="M12 18a6 6 0 0 1-6-6h12a6 6 0 0 1-6 6Z" fill="#a259ff" className="fill-a259ff"/><path d="M6 12a6 6 0 0 1 6-6v12a6 6 0 0 1-6-6Z" fill="#f24e1e" className="fill-f24e1e"/><path d="M12 6a6 6 0 0 1 6 6h-6V6Z" fill="#ff7262" className="fill-ff7262"/></svg>
-                    <h3>Figma</h3>
-            </div>
-          </div>
+
+                {/* ADDITIONAL INFO / CONTACT */}
+                <section className={`${styles.contactSection} ${styles.animateOnScroll}`} id="additional-info">
+                    <div className={styles.contactWrapper}>
+                        <div className={styles.contactInfo}>
+                            <h2>Additional <span className={styles.highlight}>Information</span></h2>
+                            <ul>
+                                <li><FontAwesomeIcon icon={faGlobe} className={styles.iconGray} /> <span>Languages: Arabic, French, English.</span></li>
+                                <li><FontAwesomeIcon icon={faLinkedin} className={styles.iconBlue} /> <a href="https://www.linkedin.com/in/ali-abid-344701335/" target="_blank" rel="noopener noreferrer">linkedin.com/in/ali-abid</a></li>
+                                <li><FontAwesomeIcon icon={faGithub} className={styles.iconWhite} /> <a href="https://github.com/AliAbid31" target="_blank" rel="noopener noreferrer">github.com/AliAbid31</a></li>
+                                <li><FontAwesomeIcon icon={faPhone} className={styles.iconGreen} /> <span>Phone Number: +213 553 67 52 04</span></li>
+                                <li><div className={styles.emailText}>Email: aliabid312006@email.com <br/> Or: oa_abid@esi.dz</div></li>
+                            </ul>
+                        </div>
+                        <div className={styles.smallCard}>
+                            <Image src="/guy.png" alt="Profile of Ali Abid" width={120} height={120} className={styles.smallAvatar} />
+                            <div className={styles.cardDetails}>
+                                <p><strong>Full Name:</strong> Ali Abid</p>
+                                <p><strong>Age:</strong> 19 years old</p>
+                                <p><strong>Nationality:</strong> Algerian</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
-      </div>
-      <div className={styles.div3} id="experience">
-        <section id="experience" className={styles.fadeIn}>
-          <h2 style={{color: '#ffffff', marginBottom: '2rem', fontFamily: "'Inter', sans-serif"}}>Experience :</h2>
-          <div className={styles.etic}>
-            <h3>
-              <span style={{ color: '#06b6d4' }}>   Etic Communication </span>
-              <span style={{ color: '#ef4444' }}>and Multimedia </span>
-              <span style={{ color: '#f0f0f5' }}>member</span>
-              <span style={{ color: '#8b5cf6' }}>(ESI Algiers) :</span>
-            </h3>
-            <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
-              <li>Organising Events (Algier&#39;s Up, S2EE..).</li>
-              <li>Participating in Hacktic.</li>
-            </ul>
-          </div>
-          <div className={styles.hexsoftwares}>
-            <h3>
-              <span style={{ color: '#ffffff', marginLeft: '5%' }}>   Hexsoftwares : </span>
-            </h3>
-            <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
-              <li>Web Dev Summer Internship</li>
-            </ul>
-          </div>
-          <div className={styles.shellmates}>
-            <h3>
-              <span style={{ color: '#ffffff', marginLeft: '5%' }}>   Shellmates </span>
-              <span style={{ color: '#10b981' }}>Club member : </span>
-            </h3>
-            <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
-              <li>Cyber Security BootCamp</li>
-            </ul>
-          </div>
-          <div className={styles.gdg}>
-            <h3>
-              <span style={{ color: '#ef4444', marginLeft: '5%' }}>   GDG </span>
-              <span style={{ color: '#06b6d4' }}>Algiers </span>
-              <span style={{ color: '#10b981' }}>Club </span>
-              <span style={{ color: '#f0f0f5' }}>member — 6 mos :</span>
-            </h3>
-            <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
-              <li>Member — Nov 2025 - Present · Hybrid</li>
-              <li>GDG Hack 3.0 Participation — Dec 2025 · Hackathon organised by GDG Algiers</li>
-              <li>GDG Integration Program 2025 — Nov 2025</li>
-            </ul>
-          </div>
-          <div className={styles.school}>
-            <h3>
-              <span style={{ color: '#3b82f6', marginLeft: '5%' }}>   School of AI </span>
-              <span style={{ color: '#f0f0f5' }}>Algiers member — 7 mos :</span>
-            </h3>
-            <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
-              <li>Member — Oct 2025 - Present</li>
-              <li>AI Real Camp — Feb 2026 - Present · 3 mos<br/>
-                <span style={{ fontSize: '0.82rem', color: '#a5b4d4', display: 'block', marginTop: '0.2rem' }}>
-                  As a beginner-friendly datathon by the School of AI Algiers, AI Real Camp was my first step into the world of datathons. It allowed me to discover how AI challenges really work
-                </span>
-                <span style={{ fontSize: '0.82rem', color: '#a5b4d4', display: 'block', marginTop: '0.2rem', fontWeight: 600 }}>
-                  <FontAwesomeIcon icon={faGamepad} style={{ marginRight: '0.3rem' }} /> Kaggle Competing
-                </span>
-              </li>
-              <li>AI Camp — Dec 2025 · Computer Vision and Artificial Neural Networks</li>
-            </ul>
-          </div>
-        </section>
-        <section className={styles.square}>
-          <div className={styles.projects}>
-            <h1 style={{marginBottom: '2rem', color: '#ffffff', fontFamily: "'Inter', sans-serif", fontSize: '1.5rem', fontWeight: 700}}>Projects :</h1>
-            <div style={{ marginBottom: '1rem' }}>
-              <h4 style={{ marginBottom: '0.2rem' }} className={styles.futbol}>My Football Game :</h4>
-                <a style={{ paddingLeft: '2vw', fontSize: '1rem' }} className={styles.a} href="https://ali-abid-football-challenges.vercel.app" target="_blank">ali-abid-football-challenges</a>
-            </div>
-            <div style={{ marginBottom: '1rem' }}>
-              <h4 style={{ marginBottom: '0.2rem' }} className={styles.ml}>My First ML model :</h4>
-                <a style={{ paddingLeft: '2vw', fontSize: '1rem' }} className={styles.a} href="https://cars-price-predictor.vercel.app" target="_blank">cars-price-predictor</a>
-            </div>
-            <div style={{ marginBottom: '1rem' }}>
-              <h4 style={{ marginBottom: '0.2rem', textUnderlineOffset: '2px' }} className={styles.city}>Smart City Waste  Management :</h4>
-                <a style={{ paddingLeft: '2vw', fontSize: '1rem' }} className={styles.a} href="https://eco-tracker-blush.vercel.app" target="_blank">eco-tracker-blush</a>
-            </div>
-            <div style={{ marginBottom: '1rem' }}>
-              <h4 style={{ marginBottom: '0.2rem', textUnderlineOffset: '2px' }} className={styles.garbage}>Garbage Classifier :</h4>
-                <a style={{ paddingLeft: '2vw', fontSize: '1rem' }} className={styles.a} href="https://eco-garbage-classifier.netlify.app/" target="_blank">eco-garbage-classifier</a>
-            </div>
-            <div style={{ marginBottom: '1rem' }}>
-              <h4 style={{ marginBottom: '0.2rem' }} className={styles.worldcup}>World Cup Predictions :</h4>
-                <a style={{ paddingLeft: '2vw', fontSize: '1rem' }} className={styles.a} href="https://world-cup-2026-predictions.netlify.app/" target="_blank">world-cup-2026-predictions</a>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div className={styles.div4} id="additional-info">
-          <div className={styles.additionalInfo}>
-            <h2 style={{color: '#ffffff', marginBottom: '1.2rem', fontFamily: "'Inter', sans-serif"}}>Additional Information :</h2>
-            <ul style={{ listStyleType: 'disc', paddingLeft: '2vw' }}>
-              <li><FontAwesomeIcon style={{color: '#9ca3af'}} icon={faGlobe} /> Languages: Arabic, French, English.</li>
-              <li><FontAwesomeIcon style={{color: '#3b82f6'}} icon={faLinkedin} /> Linkedin : <a href="https://www.linkedin.com/in/ali-abid-344701335/" target="_blank" rel="noopener noreferrer">linkedin.com/Ali Abid</a></li>
-              <li><FontAwesomeIcon style={{color: '#f0f0f5'}} icon={faGithub} /> GitHub : <a href="https://github.com/AliAbid31" target="_blank" rel="noopener noreferrer">github.com/AliAbid31</a></li>
-              <li><FontAwesomeIcon style={{color: '#10b981'}} icon={faPhone} /> Phone Number : +213 553 67 52 04</li>
-            </ul>
-          </div>
-          <div className={styles.smallSquare}>
-            <Image src="/guy.png" alt="Profile of Ali Abid" width={200} height={200} style={{ width: '20vw', height: '20vw' }} />
-            <p>Full Name : Ali Abid</p>
-            <p>Age : 19 years old</p>
-            <p>Nationality : Algerian</p>
-          </div>
-      </div>
-      </section> 
-      <div className={styles.progressBar}></div>
-    </>
-  );
+    );
 }

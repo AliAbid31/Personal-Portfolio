@@ -34,6 +34,7 @@
 
 html {
   color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -42,7 +43,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 a {
