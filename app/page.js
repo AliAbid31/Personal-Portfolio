@@ -295,6 +295,12 @@ export default function Home() {
                                     <p>world-cup-2026-predictions <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.iconSmall} /></p>
                                 </div>
                             </a>
+                            <a href="https://ali-abid-football-challenges-download.netlify.app/" target="_blank" className={styles.projectCard}>
+                                <div className={styles.projectContent}>
+                                    <h4 className={styles.highlightYellow}>Football Game Mobile App Version</h4>
+                                    <p>download-ali-abid-football-challenges <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.iconSmall} /></p>
+                                </div>
+                            </a>
                         </div>
                     </section>
                 </div>
