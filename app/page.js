@@ -22,7 +22,6 @@ export default function Home() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Observer for fade-in animations on scroll
     useEffect(() => {
         const elementsToAnimate = document.querySelectorAll(`.${styles.animateOnScroll}`);
         const observer = new IntersectionObserver((entries) => {
@@ -55,7 +54,6 @@ export default function Home() {
             </header>
 
             <main className={styles.container}>
-                {/* HERO SECTION */}
                 <section className={styles.heroSection}>
                     <div className={styles.heroGears}></div>
                     <div className={styles.heroContent}>
@@ -71,7 +69,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* ABOUT ME SECTION */}
                 <section className={styles.aboutSection} id="about-me">
                     <div className={styles.aboutGears}></div>
                     <div className={styles.aboutContent}>
@@ -94,7 +91,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* SKILLS SECTION */}
                 <section className={styles.skillsSection} id="skills">
                     <div className={styles.skillsContent}>
                         <h2 className={styles.sectionTitle}>My <span className={styles.highlight}>Skills</span></h2>
@@ -216,13 +212,13 @@ export default function Home() {
                 </section>
 
                 <div className={styles.lowerSectionsWrapper}>
-                    {/* EXPERIENCE SECTION */}
                     <section className={`${styles.experienceSection} ${styles.animateOnScroll}`} id="experience">
                         <h2 className={styles.sectionTitle}>Experience</h2>
                         <div className={styles.timeline}>
                             <div className={styles.timelineItem}>
                                 <h3><span className={styles.highlightPink}>Etic Communication</span> and Multimedia member <span className={styles.highlightPurple}>(ESI Algiers)</span></h3>
                                 <ul>
+                                    <li>Member — Oct 2024 - Present</li>
                                     <li>Organising Events (Algier's Up, S2EE..).</li>
                                     <li>Participating in Hacktic.</li>
                                 </ul>
@@ -230,21 +226,23 @@ export default function Home() {
                             <div className={styles.timelineItem}>
                                 <h3>Hexsoftwares</h3>
                                 <ul>
-                                    <li>Web Dev Summer Internship</li>
+                                    <li>Web Dev Summer Internship - July/August 2025</li>
                                 </ul>
                             </div>
                             <div className={styles.timelineItem}>
                                 <h3><span className={styles.highlightGreen}>Shellmates</span> Club member</h3>
                                 <ul>
+                                    <li>Member — Oct 2025 - Present</li>
                                     <li>Cyber Security BootCamp</li>
                                 </ul>
                             </div>
                             <div className={styles.timelineItem}>
                                 <h3><span className={styles.highlightRed}>GDG</span> <span className={styles.highlight}>Algiers</span> <span className={styles.highlightGreen}>Club</span> member — 6 mos</h3>
                                 <ul>
-                                    <li>Member — Nov 2025 - Present · Hybrid</li>
-                                    <li>GDG Hack 3.0 Participation — Dec 2025 · Hackathon organised by GDG Algiers</li>
+                                    <li>Member — Oct 2025 - Present</li>
                                     <li>GDG Integration Program 2025 — Nov 2025</li>
+                                    <li>GDG Hack 3.0 Participation — Dec 2025 · Hackathon organised by GDG Algiers</li>
+                                    <li>GCPC 3.0 (Competitive Programming Challenges) - April 2026 Participation</li>
                                 </ul>
                             </div>
                             <div className={styles.timelineItem}>
@@ -261,7 +259,6 @@ export default function Home() {
                         </div>
                     </section>
 
-                    {/* PROJECTS SECTION */}
                     <section className={`${styles.projectsSection} ${styles.animateOnScroll}`} id="projects">
                         <h2 className={styles.sectionTitle}>Featured <span className={styles.highlight}>Projects</span></h2>
                         <div className={styles.projectsGrid}>
@@ -305,7 +302,6 @@ export default function Home() {
                     </section>
                 </div>
 
-                {/* ADDITIONAL INFO / CONTACT */}
                 <section className={`${styles.contactSection} ${styles.animateOnScroll}`} id="additional-info">
                     <div className={styles.contactWrapper}>
                         <div className={styles.contactInfo}>
