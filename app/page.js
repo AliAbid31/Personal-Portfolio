@@ -221,6 +221,7 @@ export default function Home() {
                                     <li>Member — Oct 2024 - Present</li>
                                     <li>Organising Events (Algier's Up, S2EE..).</li>
                                     <li>Participating in Hacktic.</li>
+                                    <li>Attending BEFORE S2EE (a full-day conference featuring a curated lineup of talks designed to help you level up your job search game. From crafting a standout CV and mastering interview techniques).</li>
                                 </ul>
                             </div>
                             <div className={styles.timelineItem}>
