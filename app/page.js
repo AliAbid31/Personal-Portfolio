@@ -275,12 +275,6 @@ export default function Home() {
                                     <p>cars-price-predictor <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.iconSmall} /></p>
                                 </div>
                             </a>
-                            <a href="https://eco-tracker-blush.vercel.app" target="_blank" className={styles.projectCard}>
-                                <div className={styles.projectContent}>
-                                    <h4 className={styles.highlightGreen}>Smart City Waste Management</h4>
-                                    <p>eco-tracker-blush <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.iconSmall} /></p>
-                                </div>
-                            </a>
                             <a href="https://eco-garbage-classifier.netlify.app/" target="_blank" className={styles.projectCard}>
                                 <div className={styles.projectContent}>
                                     <h4 className={styles.highlightGreen}>Garbage Classifier</h4>
