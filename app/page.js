@@ -257,6 +257,12 @@ export default function Home() {
                                     <li>AI Camp — Dec 2025 · Computer Vision and Artificial Neural Networks</li>
                                 </ul>
                             </div>
+                            <div className={styles.timelineItem}>
+                                <h3><span style={{color: '#FFD700'}}>CSE</span> <span style={{color: '#000000', fontWeight: 'bold', WebkitTextStroke: '0.7px white'}}>(Club Scientifique de l'ESI)</span></h3>
+                                <ul>
+                                    <li>2nd place 🥈 in an online datathon</li>
+                                </ul>
+                            </div>
                         </div>
                     </section>
 
