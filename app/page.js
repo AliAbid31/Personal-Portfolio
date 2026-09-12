@@ -216,7 +216,13 @@ export default function Home() {
                         <h2 className={styles.sectionTitle}>Experience</h2>
                         <div className={styles.timeline}>
                             <div className={styles.timelineItem}>
-                                <h3><span className={styles.highlightRed}>Djezzy DSIP 4</span> Data Science Intern <span className={styles.highlightOrange}></span></h3>
+                                <h3><span className={styles.highlightBlue}>ZTE Algérie</span> Intern <span className={styles.highlightWhite}></span></h3>
+                                <ul>
+                                    <li>Sep 2026</li>
+                                </ul>
+                            </div>
+                            <div className={styles.timelineItem}>
+                                <h3><span className={styles.highlightRed}>Djezzy/Majesteye DSIP 4</span> Data Science Intern <span className={styles.highlightOrange}></span></h3>
                                 <ul>
                                     <li>June 2026 - July 2026</li>
                                 </ul>
