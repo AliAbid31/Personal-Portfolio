@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe, faPhone, faGamepad, faUpRightFromSquare, faBolt, faDatabase, faLeaf, faCode, faRocket, faPaperPlane, faFire, faSmile, faChartSimple, faInfinity, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faPhone, faGamepad, faUpRightFromSquare, faBolt, faDatabase, faLeaf, faCode, faRocket, faPaperPlane, faFire, faSmile, faChartSimple, faInfinity, faMoon, faLink } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub, faJava, faGitAlt, faKaggle, faReact, faJs, faFigma, faPython } from '@fortawesome/free-brands-svg-icons';
 import 'flag-icon-css/css/flag-icons.min.css';
 
@@ -205,6 +205,10 @@ export default function Home() {
                                     <FontAwesomeIcon icon={faMoon} style={{ color: '#f97316', fontSize: '3.5rem' }} />
                                     <h3>Jupyter</h3>
                                 </div>
+                                <div className={styles.skillCard}>
+                                    <FontAwesomeIcon icon={faLink} style={{ color: '#1fa2ab', fontSize: '3.5rem' }} />
+                                    <h3>LangChain</h3>
+                                </div>
                             </div>
                         </div>
 
@@ -289,7 +293,7 @@ export default function Home() {
                             </a>
                             <a href="https://cars-price-predictor.vercel.app" target="_blank" className={styles.projectCard}>
                                 <div className={styles.projectContent}>
-                                    <h4 className={styles.highlightRed}>My First ML model</h4>
+                                    <h4 className={styles.highlightPink}>My First ML model</h4>
                                     <p>cars-price-predictor <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.iconSmall} /></p>
                                 </div>
                             </a>
@@ -309,6 +313,12 @@ export default function Home() {
                                 <div className={styles.projectContent}>
                                     <h4 className={styles.highlightYellow}>Football Game Mobile App Version</h4>
                                     <p>download-ali-abid-football-challenges <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.iconSmall} /></p>
+                                </div>
+                            </a>
+                            <a href="https://auto-agent.oa-abid.workers.dev/" target="_blank" className={styles.projectCard}>
+                                <div className={styles.projectContent}>
+                                    <h4 className={styles.highlightRed}>AutoExpert RAG</h4>
+                                    <p>auto-agent <FontAwesomeIcon icon={faUpRightFromSquare} className={styles.iconSmall} /></p>
                                 </div>
                             </a>
                         </div>
