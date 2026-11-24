@@ -341,7 +341,7 @@ export default function Home() {
                             <Image src="/guy.png" alt="Profile of Ali Abid" width={120} height={120} className={styles.smallAvatar} />
                             <div className={styles.cardDetails}>
                                 <p><strong>Full Name:</strong> Ali Abid</p>
-                                <p><strong>Age:</strong> 19 years old</p>
+                                <p><strong>Age:</strong> 20 years old</p>
                                 <p><strong>Nationality:</strong> Algerian</p>
                             </div>
                         </div>
